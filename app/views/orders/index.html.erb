@@ -1,0 +1,26 @@
+<h2>Order History</h2>
+
+<table>
+  <thead>
+    <tr>
+      <td>Order Id</td>
+      <td>Total</td>
+      <td>User_id</td>
+      </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |o| %>
+   
+    <% if o["sub_total"].to_i!=0%>
+      <tr>
+        <td>
+            <%= o["id"]%>
+        </td>
+        <td>Rs<%= o["sub_total"] %></td>
+        <td><%=o["user_id"]%></td>
+    </tr>
+    <% end %>
+    <%end%>
+  </tbody>
+  
+</table>
